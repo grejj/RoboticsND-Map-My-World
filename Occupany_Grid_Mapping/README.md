@@ -63,6 +63,7 @@ the matplotlib library. Follow the steps below.
 Clone the repository:
 
 `$ git clone https://github.com/grejj/RoboticsND-Map-My-World.git`
+
 `$ cd RoboticsND-Map-My-World`
 
 Clear any past maps but not the folder itself:
@@ -81,4 +82,4 @@ The program will then generate a map in the Maps directory as shown below.
 
 ![Generated Map](Images/generated_map.png "Generated Map")
 
-__Note:__ All information and images shown here were retrieved from the Udacity Robotics Nanodegree Mapping and SLAM Unit.
+__Note:__ All information and images shown here were retrieved from the Udacity Robotics Nanodegree Mapping and SLAM unit course material.

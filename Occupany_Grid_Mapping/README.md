@@ -22,19 +22,9 @@ previous beliefs and current measurements. The summary of the filter is shown be
 
 ![Binary Bayes Filter](Images/binary_bayes_filter.png "Binary Bayes Filter Diagram")
 
-### Occupancy Grid Mapping Algorithm
+### Inverse Sensor Model
 
-The Occupancy Grid Mapping Algorithm estimates the map by dividing it into a finite number of equally sized grid cells.
-These cells will either have values of 1 or 0 depending on if that space it represented is occupied or free respectively.
-
-This algorithm uses the Binary Bayes Filter to estimate the occupancy values of grid cells. The algorithm takes the 
-previous belief, current poses, and current measurements as input. The algorithm loops through all of the grid cells
-in the map. If a grid cell is within range of a sensor, the occupancy value of the cell is updated using the Binary
-Bayes Filter. If not, the occupany value remains the same. This is summarized below.
-
-![Occupancy Grid Mapping](Images/occupancy_grid_mapping.png "Occupancy Grid Mapping Algorithm")
-
-Remember that a part of the Binary Bayes Filter is the Inverse Sensor Model which estimates the probability of the map
+As can be seen above, the Binary Bayes Filter computes the log odd of the inverse measurement model. This is where the Inverse Sensor Model Algorithm comes in. The Inverse Sensor Model Algorithm estimates the probability of the map
 given the measurements and the poses in its log odds representation. This algorithm is illustrated below.
 
 ![Inverse Sensor Model](Images/inverse_sensor_model.png "Inverse Sensor Model Algorithm")
@@ -54,9 +44,18 @@ The algorithm has 3 different behaviors depending on 3 cases:
 2. If the cell is within +/- a/2 of a detected range, the cell is considered occupied.
 3. If the cell range is less than a/2 of the detected range, the cell is considered free.
 
+### Occupancy Grid Mapping Algorithm
+
+The Occupancy Grid Mapping Algorithm estimates the map by dividing it into a finite number of equally sized grid cells.
+These cells will either have values of 1 or 0 depending on if that space it represented is occupied or free respectively.
+
+This algorithm uses the Binary Bayes Filter and Inverse Sensor Model to estimate the occupancy values of grid cells. The algorithm takes the previous belief, current poses, and current measurements as input. The algorithm loops through all of the grid cells in the map. If a grid cell is within range of a sensor, the occupancy value of the cell is updated using the Binary Bayes Filter. If not, the occupany value remains the same. This is summarized below.
+
+![Occupancy Grid Mapping](Images/occupancy_grid_mapping.png "Occupancy Grid Mapping Algorithm")
+
 ## Implementation
 
-Now, with basic understanding of the Occupancy Grid Mapping algorithm and its componenets the Binary Bayes Filter and
+Now, with basic understanding of the Occupancy Grid Mapping algorithm and its components the Binary Bayes Filter and
 the Inverse Sensor Model, we can implement the algorithm to create a map. This solution will use sample
 data (measurements and poses) to estimate the map. An image of the map will then be generated using
 the matplotlib library. Follow the steps below. 
@@ -81,3 +80,5 @@ Run the program:
 The program will then generate a map in the Maps directory as shown below.
 
 ![Generated Map](Images/generated_map.png "Generated Map")
+
+__Note:__ All information and images shown here were retrieved from the Udacity Robotics Nanodegree Mapping and SLAM Unit.

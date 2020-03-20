@@ -62,9 +62,10 @@ the matplotlib library. Follow the steps below.
 
 Clone the repository:
 
-`$ git clone https://github.com/grejj/RoboticsND-Map-My-World.git`
-
-`$ cd RoboticsND-Map-My-World`
+```
+$ git clone https://github.com/grejj/RoboticsND-Map-My-World.git
+$ cd RoboticsND-Map-My-World
+```
 
 Clear any past maps but not the folder itself:
 

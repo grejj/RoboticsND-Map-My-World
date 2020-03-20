@@ -64,20 +64,26 @@ Clone the repository:
 
 ```
 $ git clone https://github.com/grejj/RoboticsND-Map-My-World.git
-$ cd RoboticsND-Map-My-World
+$ cd RoboticsND-Map-My-World/Occupancy_Grid_Mapping
 ```
 
 Clear any past maps but not the folder itself:
 
-`$ rm -rf Maps/*`
+```
+$ rm -rf Maps/*
+```
 
 Compile the program:
 
-`$ g++ main.cpp -o app -std=c++11 -I/usr/include/python2.7 -lpython2.7`
+```
+$ g++ main.cpp -o app -std=c++11 -I/usr/include/python2.7 -lpython2.7
+```
 
 Run the program:
 
-`$ ./app`
+```
+$ ./app
+```
 
 The program will then generate a map in the Maps directory as shown below.
 

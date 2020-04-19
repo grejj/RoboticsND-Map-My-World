@@ -47,4 +47,4 @@ How does loop closure detect similar or already mapping images? Loop closure det
 
 General GraphSLAM complexity increases linearily forever as the number of nodes increase. RTAB mapping applies memory management techniques to allow for real-time map assembly by limiting complexity. RTAB mapping only performs loop closure detection on images in its working memory. The working memory size is kept constant as images are constantly transferred to long-term memory. As the working memory remains constant, the complexity and time as the number of nodes increase stays the same. This is illustrate below.
 
-<img src="Images/graphslam_complexity.png" width="100" height="400"> <img src="Images/RTAB_mapping_complexity.png" width="100" height="400"> 
+<img src="Images/graphslam_complexity.png" width="350" height="400"> <img src="Images/RTAB_mapping_complexity.png" width="350" height="400"> 

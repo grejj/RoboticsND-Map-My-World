@@ -1,5 +1,7 @@
 # Grid-based FastSLAM
 
+![](Videos/gmapping.gif=764x429)
+
 In this section, the principles of both localization and mapping will be used to solve one of the most fundamental problems in robotics - SLAM. Before going into SLAM algorithms, it should be first noted two types of SLAM problems that SLAM algorithms are used to solve:
 
 1. __Online SLAM__ uses current measurements and controls to estimate the current map and pose.
@@ -16,35 +18,35 @@ The modification is called the __Rao-Blackwellized__ particle filter approach. T
 
 Grid-based FastSLAM is a modfication of FastSLAM that solves the SLAM problem without landmarks by using grid maps. To solve for the posterior (map and pose), the problem is divided into separate parts:
 
-1. Estimate Robot Trajectory
+1. __Estimate Robot Trajectory__
 
 Just as with Monte-Carlo Localization, robot pose is estimated by a set of particles that each have a pose and weight associated with them that defines how accurate that particle is to the actual robot pose. However, in addition to this, each particle also maintains its own map.
 
-2. Estimate Map
+2. __Estimate Map__
 
-As each particle has a defined pose, the problem is reduced to solving the map with known poses (Occupany-Grip Mapping) for each particle. For each particle, the corresponding pose is used to solve the map for that specific particle.
+As each particle has a defined pose, the problem is reduced to solving the map with known poses (Occupancy-Grip Mapping) for each particle. For each particle, the corresponding pose is used to solve the map for that specific particle.
 
 This process is summarized below, using MCL for estimating robot trajectory/pose at each particle and Occupancy-Grid Mapping for estimating the map at each particle using their corresponding pose:
 
-![Grid-based FastSLAM](Images/grid-based_fastslam.png "Grid-based FastSLAM")
+![Grid-based FastSLAM](Images/grid-based_fastslam.png=764x429 "Grid-based FastSLAM")
 
 The Grid-based FastSLAM algorithm can be further summarized as below:
 
-![Grid-based FastSLAM Algorithm](Images/grid-based_fastslam_algorithm.png "Grid-based FastSLAM Algorithm")
+![Grid-based FastSLAM Algorithm](Images/grid-based_fastslam_algorithm.png=764x429 "Grid-based FastSLAM Algorithm")
 
-The Grid-based FastSLAM algorithm takes input as previous belief, current command, and current measurement and outputs the current belief using the following steps for every particle (green box):
+The Grid-based FastSLAM algorithm takes input as previous belief of map and pose, current command, and current measurement and outputs the current belief of map pose using the following steps for every particle (green box):
 
 1. __Sampling Motion__ - current pose is determined by current command and previous poses.
 2. __Importance Weight__ - the weight of the particle is updated.
 3. __Map Estimation__ - occupancy grid mapping is used to update particle map.
 
-At the end during resampling (red box), the particles with low weight are discarded.
+At the end during resampling (red box), the particles with the lowest weight are discarded.
 
 ## IMPLEMENTATION - SLAM_GMAPPING
 
-To test out what has been learned about Grid-based FastSLAM, the ROS __gmapping__ package will be used with Turtlebot3 to produce a map using Gazebo. Gmapping is fed laser data as well as robot odometry to produce a 2D occupancy grid map.
+To test out what has been learned about Grid-based FastSLAM, the ROS __gmapping__ package will be used with Turtlebot3 to produce a map using the Gazebo simulator. Gmapping is fed laser data as well as robot odometry to produce a 2D occupancy grid map.
 
-![GMapping](Images/gmapping.png "GMapping")
+![GMapping](Images/gmapping.png=764x429 "GMapping")
 
 Make sure that you have install TurtleBot3 and slam gmapping packages:
 
@@ -82,8 +84,3 @@ To save an image of the current map:
 ```
 $ rosrun map_server map_saver -f ~/map
 ```
-
-Below is an example RViz and Gazebo simulation that produces a 2D grid-based map:
-
-![](Videos/gmapping.gif)
-

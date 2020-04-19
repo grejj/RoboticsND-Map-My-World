@@ -1,6 +1,6 @@
 # Grid-based FastSLAM
 
-![](Videos/gmapping.gif =700x400)
+<img src="Videos/gmapping.gif" width="700" height="400">
 
 In this section, the principles of both localization and mapping will be used to solve one of the most fundamental problems in robotics - SLAM. Before going into SLAM algorithms, it should be first noted two types of SLAM problems that SLAM algorithms are used to solve:
 
@@ -42,7 +42,7 @@ The Grid-based FastSLAM algorithm takes input as previous belief of map and pose
 
 At the end during resampling (red box), the particles with the lowest weight are discarded.
 
-## IMPLEMENTATION - SLAM_GMAPPING
+## Implementation - Slam_Gmapping
 
 To test out what has been learned about Grid-based FastSLAM, the ROS __gmapping__ package will be used with Turtlebot3 to produce a map using the Gazebo simulator. Gmapping is fed laser data as well as robot odometry to produce a 2D occupancy grid map.
 

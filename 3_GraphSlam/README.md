@@ -1,4 +1,4 @@
-# Grid-based FastSLAM
+# GraphSLAM
 
 In this section, the concepts from Grid-Based FastSLAM will be utilized to study and implement GraphSLAM. GraphSLAM imporves on FastSLAM by solving the Full SLAM problem, meaning it solves for all poses and maps up until the current time, not just the current map and pose. 
 

@@ -1,7 +1,5 @@
 # Grid-based FastSLAM
 
-<img src="Videos/gmapping.gif" width="700" height="400">
-
 In this section, the concepts from Grid-Based FastSLAM will be utilized to study and implement GraphSLAM. GraphSLAM imporves on FastSLAM by solving the Full SLAM problem, meaning it solves for all poses and maps up until the current time, not just the current map and pose. 
 
 FastSLAM works with finite data and finite particles, so there is room for error. GraphSLAM uses all data from past and present to solve the SLAM problem.
@@ -46,6 +44,7 @@ How does loop closure detect similar or already mapping images? Loop closure det
 <img src="Images/bag-of-words.png" width="700" height="400">
 
 ### Graph Optimization and Memory Management
+
 General GraphSLAM complexity increases linearily forever as the number of nodes increase. RTAB mapping applies memory management techniques to allow for real-time map assembly by limiting complexity. RTAB mapping only performs loop closure detection on images in its working memory. The working memory size is kept constant as images are constantly transferred to long-term memory. As the working memory remains constant, the complexity and time as the number of nodes increase stays the same. This is illustrate below.
 
 <div class="row">

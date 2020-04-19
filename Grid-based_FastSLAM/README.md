@@ -1,6 +1,6 @@
 # Grid-based FastSLAM
 
-![](Videos/gmapping.gif=764x429)
+![](Videos/gmapping.gif){:height="700px" width="400px"}
 
 In this section, the principles of both localization and mapping will be used to solve one of the most fundamental problems in robotics - SLAM. Before going into SLAM algorithms, it should be first noted two types of SLAM problems that SLAM algorithms are used to solve:
 
@@ -28,11 +28,11 @@ As each particle has a defined pose, the problem is reduced to solving the map w
 
 This process is summarized below, using MCL for estimating robot trajectory/pose at each particle and Occupancy-Grid Mapping for estimating the map at each particle using their corresponding pose:
 
-![Grid-based FastSLAM](Images/grid-based_fastslam.png=764x429 "Grid-based FastSLAM")
+![Grid-based FastSLAM](Images/grid-based_fastslam.png "Grid-based FastSLAM"){:height="700px" width="400px"}
 
 The Grid-based FastSLAM algorithm can be further summarized as below:
 
-![Grid-based FastSLAM Algorithm](Images/grid-based_fastslam_algorithm.png=764x429 "Grid-based FastSLAM Algorithm")
+![Grid-based FastSLAM Algorithm](Images/grid-based_fastslam_algorithm.png "Grid-based FastSLAM Algorithm"){:height="700px" width="400px"}
 
 The Grid-based FastSLAM algorithm takes input as previous belief of map and pose, current command, and current measurement and outputs the current belief of map pose using the following steps for every particle (green box):
 
@@ -46,7 +46,7 @@ At the end during resampling (red box), the particles with the lowest weight are
 
 To test out what has been learned about Grid-based FastSLAM, the ROS __gmapping__ package will be used with Turtlebot3 to produce a map using the Gazebo simulator. Gmapping is fed laser data as well as robot odometry to produce a 2D occupancy grid map.
 
-![GMapping](Images/gmapping.png=764x429 "GMapping")
+![GMapping](Images/gmapping.png "GMapping"){:height="700px" width="400px"}
 
 Make sure that you have install TurtleBot3 and slam gmapping packages:
 

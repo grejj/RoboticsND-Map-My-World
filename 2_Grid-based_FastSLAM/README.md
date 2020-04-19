@@ -10,7 +10,7 @@ In this section, the principles of both localization and mapping will be used to
 
 ## FastSLAM
 
-FastSLAM is a SLAM algorithm that applies the particle filter approach (like MCL) to solve the SLAM problem. However, this approach differs from MCL as an additional dimension, the map, is added to each particle. If we used the same approach as MCL, the problem would scale out of control because the map dimesion has many variables. Thus, a modified approach must be taken.
+FastSLAM is a SLAM algorithm that applies the particle filter approach (like MCL) to solve the Online SLAM problem. However, this approach differs from MCL as an additional dimension, the map, is added to each particle. If we used the same approach as MCL, the problem would scale out of control because the map dimesion has many variables. Thus, a modified approach must be taken.
 
 The modification is called the __Rao-Blackwellized__ particle filter approach. This particle filter approach estimates the posterior (map and pose) using a particle filter and Gaussian. With FastSLAM, the particle filter approach is used to get the robot trajectory or positions and then the mapping is reduced to mapping with known poses. But this problem assumes there are always landmarks. What if there are none?
 

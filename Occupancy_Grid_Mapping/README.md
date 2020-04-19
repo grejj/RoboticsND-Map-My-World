@@ -11,9 +11,8 @@ posterior over the map is calculated given the measurements and poses up until t
 
 ![Mapping with Known Poses](Images/mapping_with_known_poses.png "Mapping with Known Poses Diagram")
 
-The Occupancy Grid Mapping Algorithm uses two other important algorithms called the __Binary Bayes Filter__ and
-the __Inverse Sensor Model__ to implement its functionlity. These will be described briefly before the Occupancy
-Grid Mapping Algorithm is explained and then implemented.  
+The Occupancy Grid Mapping Algorithm solves the problem of mapping with known poses and uses two other important algorithms called the __Binary Bayes Filter__ and
+the __Inverse Sensor Model__ to implement its functionlity. These will be described briefly before the Occupancy Grid Mapping Algorithm is explained and then implemented.  
 
 ### Binary Bayes Filter
 

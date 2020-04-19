@@ -1,6 +1,6 @@
 # Map My World - Final Project
 
-<img src="Videos/rtab_mapping_intro.gif" width="700" height="400">
+<img src="Videos/rtab_mapping_intro.gif" width="900" height="500">
 
 In this final unit project, the knowledge learned in the previous sections about mapping and SLAM is applied to implement mapping of an unknown environment using a custom robot. As learned earlier, Real-Time Appearance-Based (RTAB) mapping uses a visual camera to map the surrounding environment, and uses techniques like loop closure detection and memory management and map optimization to produce the most likely map in real time.
 
@@ -10,13 +10,13 @@ The __slam_project__ ROS package includes all launch files for mapping, the worl
 
 The robot created is the custom made robot used in previous projects with added sensors. The robot includes a visual RGBD camera to implement the RTAB mapping along with a hokuyo laser mounted on the top to aid in the mapping process.
 
-<img src="Images/robot.png" width="700" height="400">
+<img src="Images/robot.png" width="900" height="500">
 
 ## World
 
 The world used in this project was a very simple, custom-built world used for previous projects. This world will be mapped in the Gazebo simulator by the robot using RTAB mapping.
 
-<img src="Images/world.png" width="700" height="400">
+<img src="Images/world.png" width="900" height="500">
 
 To view the world and robot in Gazebo, make sure you install and build the slam_project ROS package in your catkin_ws, source the workspace, and then run:
 

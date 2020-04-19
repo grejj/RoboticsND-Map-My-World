@@ -25,7 +25,8 @@ The back-end used __Maximum Likelihood Estimation (MLE)__. MLE is the process of
 
 A common algorithm for solving this problem is __Gradient Descent__. Gradient descent works by making an initial guess for the minimum of the error function and then moving opposite to the gradient to reach the minimum of the function. Shortcomings of this include arriving at local minimums and not the global minimum so __Stochastic Gradient Descent (SDG)__ can be used which is an iterative method of gradient descent using sub samples of data.
 
-## RTAB Mapping
+
+## Implementation - RTAB Mapping
 
 __Real-Time Apperance-Based Mapping__ is a GraphSLAM approach that uses visual sensors to localize the robot and map the environment. RTAB Mapping takes input from visual sensors and other odometry, performs loop closure detection and graph optimization, and then produces a map of the environment. The general overview of GraphSLAM is shown below:
 

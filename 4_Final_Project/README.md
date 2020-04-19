@@ -1,6 +1,6 @@
 # Map My World - Final Project
 
-<img src="Videos/rtab_mapping_intro.png" width="700" height="400">
+<img src="Videos/rtab_mapping_intro.gif" width="700" height="400">
 
 In this final unit project, the knowledge learned in the previous sections about mapping and SLAM is applied to implement mapping of an unknown environment using a custom robot. As learned earlier, Real-Time Appearance-Based (RTAB) mapping uses a visual camera to map the surrounding environment, and uses techniques like loop closure detection and memory management and map optimization to produce the most likely map in real time.
 
@@ -54,6 +54,6 @@ $ rosrun key_teleop key_teleop.py key_vel:=cmd_vel
 
 Now as you control the robot in Gazebo with the keyboard, you should be able to see the current map update in the RTAB mapping GUI, along with real-time loop closure detection. As you move around more in the environment, the map will continue to fill out and get better as the robot receives data from the camera and laser and updates the map accordingly.
 
-<img src="Images/map1.png" width="350" height="200"><img src="Images/map2.png" width="350" height="200"><img src="Images/map3.png" width="350" height="200"><img src="Images/map4.png" width="350" height="200">
+<img src="Images/map1.png" width="450" height="250"><img src="Images/map2.png" width="450" height="250"><img src="Images/map3.png" width="450" height="250"><img src="Images/map4.png" width="450" height="250">
 
 
